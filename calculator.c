@@ -7,7 +7,7 @@
 int main(void)
 {
  float num1, num2, result;
- char operator;
+ char operator, cont;
 
  printf("Enter the operator you would like to use today (+,-,*,/)\n");
  scanf(" %c", &operator);
@@ -16,7 +16,7 @@ int main(void)
  scanf("%f", &num1);
  scanf("%f", &num2);
  
-
+  while(1){
  if (operator == '+'){
   result = (num1 + num2);
   printf("%.2f", result);
@@ -35,7 +35,13 @@ int main(void)
   if (operator == '/'){
     result = (num1/num2);
     printf("%.2f", result);
+
   }
- 
+  printf("Do you want to continue y/n");
+  scanf(" %c", &cont);
+  if(cont == 'n' || cont == 'N'){
+    break;
+  }
+  }
  return 0;
 }
