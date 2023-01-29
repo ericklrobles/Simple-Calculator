@@ -17,6 +17,10 @@ int main(void)
  scanf("%f", &num2);
  
   while(1){
+    if (operator != '-'&& operator !='+'&& operator!= '*'&& operator != '/'){
+    printf("Invalid Operator Please try again (+,-,*,/)\n");
+    break;
+    }
  if (operator == '+'){
   result = (num1 + num2);
   printf("%.2f", result);
@@ -36,12 +40,17 @@ int main(void)
     result = (num1/num2);
     printf("%.2f", result);
 
-  }
-  printf("Do you want to continue y/n");
+  }if (operator == '/' && num2 == 0){
+    printf("Cannot divide by zero.\n");
+    break;
+}
+
+  printf("Do you want to continue y/n\n");
   scanf(" %c", &cont);
   if(cont == 'n' || cont == 'N'){
     break;
   }
+ 
   }
  return 0;
 }
